@@ -46,14 +46,13 @@ CREATE TABLE conta_corrente (
 
 CREATE TABLE aluguel(
     aluguel_key INT PRIMARY KEY AUTO_INCREMENT,
-    modelo VARCHAR(25) not null,
     dias INT not null,
     valor FLOAT not null,
-    data_alugel DATE not null,
+    data_aluguel DATE not null,
     vendedor_key INT,
     foreign key (vendedor_key) references vendedor(vendedor_key),
     cliente_key INT not null,
     foreign key (cliente_key) references cliente(cliente_key),
-    placa VARCHAR(7),
+    placa VARCHAR(8),
     foreign key (placa) references carro(placa)
 );

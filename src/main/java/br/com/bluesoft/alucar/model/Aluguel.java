@@ -12,6 +12,7 @@ public class Aluguel {
     private Long id;
     private Integer dias;
     private BigDecimal valor;
+    @Column(name = "data_aluguel")
     private LocalDate data;
     @OneToOne
     @JoinColumn(name="vendedor_key")
@@ -30,6 +31,10 @@ public class Aluguel {
         this.vendedor = vendedor;
         this.cliente = cliente;
         this.carro = carro;
+    }
+
+    public Aluguel() {
+
     }
 
     public Long getId() {

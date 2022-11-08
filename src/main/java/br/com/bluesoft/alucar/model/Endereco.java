@@ -39,6 +39,10 @@ public class Endereco {
         this.cliente = cliente;
     }
 
+    public Endereco() {
+
+    }
+
     public Long getId() {
         return id;
     }
