@@ -61,8 +61,7 @@ public class AluguelDto {
         return vendedor;
     }
 
-
-//    public static List<AluguelDto> converter(List<Carro> carros) {
-//        return carros.stream().map(CarroDto::new).collect(Collectors.toList());
-//    }
+    public static List<AluguelDto> converter(List<Aluguel> alugueis) {
+        return alugueis.stream().map(AluguelDto::new).collect(Collectors.toList());
+    }
 }

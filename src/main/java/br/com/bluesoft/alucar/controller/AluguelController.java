@@ -37,11 +37,11 @@ public class AluguelController {
         this.carroRepository = carroRepository;
     }
 
-//    @GetMapping
-//    public List<AluguelDto> lista() {
-//        List<Aluguel> carros = carroRepository.findAll();
-//        return CarroDto.converter(carros);
-//    }
+    @GetMapping
+    public List<AluguelDto> lista() {
+        List<Aluguel> alugueis = aluguelRepository.findAll();
+        return AluguelDto.converter(alugueis);
+    }
 
     @PostMapping
     @Transactional
