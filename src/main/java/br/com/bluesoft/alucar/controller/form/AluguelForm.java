@@ -25,7 +25,7 @@ public class AluguelForm {
     @NotNull
     private LocalDate data;
     @NotNull
-    private Long vendedor;
+    private String vendedor;
     @NotNull
     private String cliente;
     @NotNull
@@ -51,7 +51,7 @@ public class AluguelForm {
         return data;
     }
 
-    public Long getVendedor() {
+    public String getVendedor() {
         return vendedor;
     }
 
@@ -65,7 +65,7 @@ public class AluguelForm {
 
     public Aluguel converter(VendedorRepository vendedorRepository, ClienteRepository clienteRepository, CarroRepository carroRepository) {
         Optional<Cliente> clienteAluguel = clienteRepository.findByNome(cliente);
-        Optional<Vendedor> vendedorAluguel = vendedorRepository.findById(vendedor);
+        Optional<Vendedor> vendedorAluguel = vendedorRepository.findByNome(vendedor);
         Optional<Carro> carroAluguel = carroRepository.findById(carro);
 
         return new Aluguel(modelo, dias,valor, data,

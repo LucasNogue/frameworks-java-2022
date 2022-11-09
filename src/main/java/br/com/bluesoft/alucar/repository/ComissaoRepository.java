@@ -1,10 +1,9 @@
 package br.com.bluesoft.alucar.repository;
 
-import br.com.bluesoft.alucar.model.Aluguel;
-import br.com.bluesoft.alucar.model.Carro;
+import br.com.bluesoft.alucar.model.Comissao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AluguelRepository extends JpaRepository<Aluguel, Long> {
+public interface ComissaoRepository extends JpaRepository<Comissao, Long> {
 }

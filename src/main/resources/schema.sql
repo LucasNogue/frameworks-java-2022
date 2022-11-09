@@ -57,3 +57,12 @@ CREATE TABLE aluguel(
     placa VARCHAR(8),
     foreign key (placa) references carro(placa)
 );
+
+CREATE TABLE comissao(
+    comissao_key INT PRIMARY KEY AUTO_INCREMENT,
+    valor FLOAT NOT NULL,
+    vendedor_key INT,
+    foreign key (vendedor_key) references vendedor(vendedor_key),
+    conta_corrente_key INT,
+    foreign key (conta_corrente_key) references conta_corrente(conta_corrente_key)
+);
