@@ -5,8 +5,6 @@ import br.com.bluesoft.alucar.model.Carro;
 import br.com.bluesoft.alucar.model.Cliente;
 import br.com.bluesoft.alucar.model.Vendedor;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +13,8 @@ import java.util.stream.Collectors;
 public class AluguelDto {
 
     private Long id;
+
+    private String modelo;
     private Integer dias;
     private BigDecimal valor;
     private LocalDate data;
@@ -25,6 +25,7 @@ public class AluguelDto {
 
     public AluguelDto(Aluguel aluguel) {
         this.id = aluguel.getId();
+        this.modelo = aluguel.getModelo();
         this.dias = aluguel.getDias();
         this.valor = aluguel.getValor();
         this.data = aluguel.getData();
@@ -35,6 +36,10 @@ public class AluguelDto {
 
     public Long getId() {
         return id;
+    }
+
+    public String getModelo() {
+        return modelo;
     }
 
     public Integer getDias() {

@@ -10,6 +10,7 @@ public class Aluguel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "aluguel_key")
     private Long id;
+    private String modelo;
     private Integer dias;
     private BigDecimal valor;
     @Column(name = "data_aluguel")
@@ -24,7 +25,8 @@ public class Aluguel {
     @JoinColumn(name="placa")
     private Carro carro;
 
-    public Aluguel(Integer dias, BigDecimal valor, LocalDate data, Vendedor vendedor, Cliente cliente, Carro carro) {
+    public Aluguel(String modelo, Integer dias, BigDecimal valor, LocalDate data, Vendedor vendedor, Cliente cliente, Carro carro) {
+        this.modelo = modelo;
         this.dias = dias;
         this.valor = valor;
         this.data = data;
@@ -43,6 +45,14 @@ public class Aluguel {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
     }
 
     public Integer getDias() {

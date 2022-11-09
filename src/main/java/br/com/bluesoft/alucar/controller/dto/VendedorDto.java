@@ -1,9 +1,7 @@
 package br.com.bluesoft.alucar.controller.dto;
 
-import br.com.bluesoft.alucar.model.Carro;
 import br.com.bluesoft.alucar.model.Vendedor;
 
-import javax.persistence.Column;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;

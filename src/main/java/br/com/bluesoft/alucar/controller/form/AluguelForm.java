@@ -17,6 +17,8 @@ public class AluguelForm {
     @NotNull
     private Long id;
     @NotNull
+    private String modelo;
+    @NotNull
     private Integer dias;
     @NotNull
     private BigDecimal valor;
@@ -31,6 +33,10 @@ public class AluguelForm {
 
     public Long getId() {
         return id;
+    }
+
+    public String getModelo() {
+        return modelo;
     }
 
     public Integer getDias() {
@@ -62,7 +68,7 @@ public class AluguelForm {
         Optional<Vendedor> vendedorAluguel = vendedorRepository.findById(vendedor);
         Optional<Carro> carroAluguel = carroRepository.findById(carro);
 
-        return new Aluguel(dias, valor, data,
+        return new Aluguel(modelo, dias,valor, data,
                 vendedorAluguel.get(),clienteAluguel.get(), carroAluguel.get());
     }
 }
